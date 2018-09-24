@@ -10,7 +10,12 @@ export default ControlledInput class extends Component {
         value: event.target.value
       })
   }
-  
+
+  handleSubmit = event => {
+  event.preventDefault()
+  this.sendFormDataSomewhere(this.state)
+}
+
   render () {
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
